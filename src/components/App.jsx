@@ -9,11 +9,10 @@ class App extends Component {
   state = {
     good: 0,
     neutral: 0,
-    bad: 0,
-    options: ['good', 'neutral', 'bad'],
+    bad: 0
   };
   
-
+options = ['good', 'neutral', 'bad'];
   onLeaveFeedback = state => {
     this.setState(prevState => {
       return {
@@ -38,7 +37,7 @@ class App extends Component {
       <div className={css.container}>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={this.state.options}
+            options={this.options}
             onLeaveFeedback={this.onLeaveFeedback}
           />
         </Section>
